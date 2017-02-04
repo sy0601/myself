@@ -1,20 +1,182 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-        div{
-            width: 300px;
-            height: 600px;
-            background: #a8c9ff;
-            font-size: 80px;
-        }
-    </style>
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/index.js"></script>
+    <title>Sunny</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <!--[if lt IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+    <script src="js/jquery-1.7.2.js"></script>
+    <!-- 滑入滑出效果组件-->
+    <script src="js/jquery.poptrox.min.js"></script>
+    <!-- 响应式布局框架-->
+    <script src="js/skel.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/change.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="css/style.css" />
+    </noscript>
 </head>
 <body>
-<div>石依诺</div>
+
+<!-- Header -->
+<header id="header">
+
+    <!-- Logo -->
+    <h1 id="logo"><a href="javascript:;">Sunny's Life</a></h1>
+
+    <!-- Nav -->
+    <nav id="nav">
+        <ul>
+            <li><a href="#intro">首页</a></li>
+            <li><a href="#one">个人简历</a></li>
+            <li><a href="#two">工作介绍</a></li>
+            <li><a href="#work">作品展示</a></li>
+            <li><a href="#contact">私信</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<!-- Intro -->
+<section id="intro" class="main style1 dark fullscreen">
+    <div class="content container small">
+        <header>
+            <h2>Climb</h2>
+        </header>
+        <p></p>
+        <footer>
+            <a href="#one" class="button style2 down">More</a>
+        </footer>
+    </div>
+</section>
+
+<!-- One -->
+<section id="one" class="main style2 left dark fullscreen">
+    <div class="content box style2 who">
+        <header>
+            <h2>个人简历</h2>
+        </header>
+        <p>
+            姓名：石岩&nbsp;&nbsp;&nbsp;&nbsp;性别：女<br/>
+            出生年月：1992.06<br/>
+            TEL:155 0101 XXXX<br/>
+            E-mail:s_yan0601@163.com<br/>
+            英语等级：四级<br/>
+            爱好：游泳<br/>
+            偶像：张韶涵、胡歌<br/>
+            工作：web前端开发工程师<br/>
+            定性，知事，选梦；遇人，择城，终老。
+        </p>
+    </div>
+    <a href="#two" class="button style2 down anchored">Next</a>
+</section>
+
+<!-- Two -->
+<section id="two" class="main style2 right dark fullscreen">
+    <div class="content box style2 job">
+        <header>
+            <h2>工作介绍</h2>
+        </header>
+        <p>&nbsp;&nbsp;人类社会正处在一个由工业时代向互联网时代转变的过渡期，而程序员无疑就成了引领未来社会科技
+            走向、站在世界科技最前沿的人类群体，我很庆幸也很骄傲的成为了其中一员。中国在习大大的带领下奋力
+            抓住这次世界机遇，实现对西方发达国家的超越已近在咫尺，我们每个程序员应肩负起国家和民族的使命，
+            为伟大的“中国梦”贡献自己的一份力量！</p>
+    </div>
+    <a href="#work" class="button style2 down anchored">Next</a>
+</section>
+
+
+<!-- Work -->
+<section id="work" class="main style3 primary">
+    <div class="content container">
+        <header>
+            <h2>作品展示</h2>
+
+        </header>
+
+        <div id="showBox">
+            <input type="button" value="上一个" class="prev">
+            <input type="button" value="下一个" class="next">
+            <ul id="showList">
+
+                <li class="l2">
+                    <a href="cube.html" target="_blank">3D魔方</a>
+                </li>
+                <li class="l1">
+                    <a href="book.html" target="_blank">图片翻页</a>
+                </li>
+                <li class="cur">
+                    <a href="game-fish/demo.html" target="_blank">捕鱼达人游戏</a>
+                </li>
+                <li class="r1">
+                    <a href="apple.html" target="_blank">apple菜单</a>
+                </li>
+                <li class="r2">
+                    <a href="picture.html" target="_blank">3D照片墙</a>
+                </li>
+                <li>
+                    <a href="explose.html" target="_blank">图片爆炸</a>
+                </li>
+                <li>
+                    <a href="time.html" target="_blank">遗弃的钟表</a>
+                </li>
+                <li>
+                    <a href="tip-scroll.html" target="_blank">链式翻转</a>
+                </li>
+                <li>
+                    <a href="windows-screen.html" target="_blank">windows屏保</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="main style3 secondary">
+    <div class="content container">
+        <header>
+            <h2>留言板</h2>
+            <p>欢迎光顾我的个人博客,茫茫人海，你我相遇，何不留下您的足迹...</p>
+        </header>
+        <div class="box container small">
+
+
+            <form method="post" action="#">
+                <div class="row half">
+                    <div class="6u"><input type="text" name="name" placeholder="姓名:" /></div>
+                    <div class="6u"><input type="text" name="email" placeholder="邮箱:" /></div>
+                </div>
+                <div class="row half">
+                    <div class="12u"><textarea name="message" placeholder="私信内容..." rows="6"></textarea></div>
+                </div>
+                <div class="row">
+                    <div class="12u">
+                        <!--<ul class="actions">
+                            <li><input type="submit" class="button" value="发送" /></li>
+                        </ul>-->
+                        <a href="javascript:;" id="send">发送</a>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer">
+
+
+
+    <!-- Menu -->
+    <ul class="menu">
+        <li>&copy; 谢谢光顾</li>
+        <li>友情链接：<a href="https://sy0601.github.io/sunny/" target="_blank">github</a> | 实时更新 <a href="javascript:;" target="_blank">敬请期待</a></li>
+    </ul>
+
+</footer>
+<audio src="music/Jam%20-%20七月上.mp3" autoplay loop></audio>
 </body>
 </html>
