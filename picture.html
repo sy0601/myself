@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D照片墙</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body{
+            background: #000;
+        }
+        ul{
+            width: 133px;
+            height: 200px;
+            background: #eee;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -100px 0 0 -66px;
+            transform-style: preserve-3d;
+            transform: rotateX(-10deg);
+        }
+        ul li{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: url("img/1.jpg") no-repeat;
+            border-radius: 8px;
+            border: 1px solid #fff;
+            -webkit-box-shadow: 0 0 10px #fff;
+            -webkit-box-reflect: below 10px -webkit-linear-gradient(rgba(0,0,0,0) 50%,rgba(0,0,0,1));
+            transition: 1s all ease;
+        }
+        ul li img{
+            width: 100%;
+        }
+
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            var oUl = document.getElementById('ul1');
+            var N = 11;
+            for(var i=0;i<N;i++){
+                var oLi = document.createElement('li');
+                oLi.style.backgroundImage = 'url("img/'+(i+1)+'.jpg")';
+                oUl.appendChild(oLi);
+
+                (function(oLi,i){
+                    setTimeout(function(){
+                        oLi.style.transform = 'rotateY('+i*360/N+'deg) translateZ(300px)';
+                        oLi.style.transition = '2s all ease '+(N-i)*400+'ms';
+                        var scale = Math.abs(Math.abs((i*360/N)%360)-180)/180;
+                        scale<0.2&&(scale = 0.2);
+                        aLi[i].style.opacity = scale;
+                    },0)
+                })(oLi,i);
+            }
+
+            var aLi = oUl.children;
+            var x = -10;
+            var y = 0;
+            aLi[0].addEventListener('transitionend',function(){
+                document.onmousedown = function(ev){
+                    var disX = ev.clientY - x;
+                    var disY = ev.clientX - y;
+                    document.onmousemove = function(ev){
+                        x = ev.clientY - disX;
+                        y = ev.clientX - disY;
+                        change(x/3,y/3);
+                    };
+                    document.onmouseup = function(){
+                        document.onmousemove = null;
+                        document.onmouseup = null;
+                    };
+                };
+            },false);
+            function change(x,y){
+                for(var i=0;i<aLi.length;i++){
+                    aLi[i].style.transform = 'rotateY('+(i*360/N+y)+'deg) translateZ(300px)';
+                    aLi[i].style.transition = 'none';
+                    oUl.style.transform = 'rotateX('+-x+'deg)';
+                    var scale = Math.abs(Math.abs((i*360/N+y)%360)-180)/180;
+                    //aLi[i].innerHTML = scale;
+                    scale<0.2&&(scale = 0.2);
+                    aLi[i].style.opacity = scale;
+                }
+            }
+        },false);
+    </script>
+</head>
+<body>
+<input type="button" value="后退" onclick="history.go(-1)" />
+<ul id="ul1">
+    
+</ul>
+</body>
+</html>
