@@ -1570,3 +1570,33 @@
 			body.touch .poptrox-popup .closer {
 				opacity: 1.0 !important;
 			}
+
+
+/*media*/
+@media (max-width: 640px){
+    #header{
+        display: -webkit-box;
+        -webkit-box-pack: center;
+    }
+    #logo{
+
+        position: static;
+        left: 50%;
+        top: 0;
+        height: 3em;
+        line-height: 3em;
+        letter-spacing: -1px;
+    }
+    #nav{
+        display: none;
+    }
+    #one .who{
+        width: 100%;
+        margin-left: 0;
+    }
+    #two .job{
+        width: 100%;
+        position: static;
+        margin: 0;
+    }
+}
